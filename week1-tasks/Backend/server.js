@@ -6,12 +6,12 @@ const cors = require('cors');
 const connection_DB = require('./db/index.db');
 dotenv.config();
 const app = express();
+connection_DB();
 app.use(express.json());
 app.use(cors());  
-connection_DB();
 app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
