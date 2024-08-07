@@ -8,7 +8,12 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 connection_DB();
-app.use(cors());  
+const corsOptions = {
+  origin: 'https://techplement-2tr6.vercel.app',
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));  
 app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
 const PORT = process.env.PORT;
