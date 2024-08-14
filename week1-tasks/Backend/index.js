@@ -6,10 +6,7 @@ const transactionRoutes = require('./routes/transaction');
 const cors = require('cors');
 const connection_DB = require('./db/index.db');
 dotenv.config();
-app.use(cors({
-  origin: "*"
-}));  
-
+app.use(cors());  
 app.use(express.json());
 connection_DB();
 
