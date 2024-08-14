@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 connection_DB();
 const corsOptions = {
-  origin: 'https://techplement-2tr6.vercel.app',
+  origin: '*',
   optionsSuccessStatus: 200
 };
 
