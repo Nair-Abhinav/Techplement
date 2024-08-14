@@ -8,12 +8,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 connection_DB();
-const corsOptions = {
-  origin: '*',
-  optionsSuccessStatus: 200
-};
-
-app.use(cors(corsOptions));  
+app.use(cors());  
 app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
 const PORT = process.env.PORT;

@@ -12,7 +12,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`https://techplement-74edu0on4-abhinav-nairs-projects.vercel.app/api/auth/register`, {email , password , balance} );
+      const response = await axios.post(`https://techplement-eta.vercel.app/api/auth/register`, {email , password , balance} );
       navigate('/login'); 
     } catch (error) {
       alert('Signup failed:', error.response?.data || error.message); 
