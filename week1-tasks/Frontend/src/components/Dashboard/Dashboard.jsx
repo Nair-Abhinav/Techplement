@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { url } from '../../lib/environment';
+// import { url } from '../../lib/environment';
 
 
 const Dashboard = () => {
@@ -28,8 +28,8 @@ const Dashboard = () => {
   const handleTransaction = async () => {
     try {
       const url = transactionType === 'deposit'
-        ? `${url}/api/transactions/deposit`
-        : `${url}/api/transactions/withdraw`;
+        ? `/api/transactions/deposit`
+        : `/api/transactions/withdraw`;
 
       const response = await axios.post(url, { amount }, {
         headers: { Authorization: `${localStorage.getItem('token')}` }

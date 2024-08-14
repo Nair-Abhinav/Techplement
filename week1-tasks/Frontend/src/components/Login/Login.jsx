@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { url } from '../../lib/environment';
+// import { url } from '../../lib/environment';
 
 
 const Login = () => {
@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       console.log(url);
-      const response = await axios.post(`${url}/api/auth/login`, { email, password });
+      const response = await axios.post(`/api/auth/login`, { email, password });
       localStorage.setItem('token', response.data.token);
       navigate('/dashboard'); // Navigate to dashboard after login
     } catch (error) {
