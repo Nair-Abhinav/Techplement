@@ -12,8 +12,11 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`https://techplement-eta.vercel.app/api/auth/register`, {email , password , balance} );
-      navigate('/login'); 
+      alert("Entered try block");
+      alert('Signup Started');
+      const response = await axios.post('/api/auth/register', {email , password , balance} );
+      alert('Signup Successful');
+      navigate('/login');
     } catch (error) {
       alert('Signup failed:', error.response?.data || error.message); 
     }
