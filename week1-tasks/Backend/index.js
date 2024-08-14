@@ -7,7 +7,7 @@ const cors = require('cors');
 const connection_DB = require('./db/index.db');
 dotenv.config();
 app.use(cors({
-  origin: [''],
+  origin: ['https://techplement-task-frontend.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));  
