@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://techplement-eta.vercel.app',
+        target: 'https://techplement-eosin.vercel.app/',
         changeOrigin: true,
       }
     }
