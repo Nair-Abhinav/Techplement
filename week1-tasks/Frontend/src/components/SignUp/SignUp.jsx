@@ -14,7 +14,7 @@ const SignUp = () => {
     try {
       alert("Entered try block");
       alert('Signup Started');
-      const response = await axios.post('/api/auth/register', {email , password , balance} );
+      const response = await axios.post('https://techplement-eosin.vercel.app/api/auth/register', {email , password , balance} );
       alert('Signup Successful');
       navigate('/login');
     } catch (error) {
