@@ -8,6 +8,7 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [balance , setBalance] = useState(0);
   const navigate = useNavigate();
+  axios.defaults.withCredentials = true;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
