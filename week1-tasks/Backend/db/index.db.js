@@ -8,10 +8,8 @@ const connection_DB = async () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-        alert("Database connection successful");
         console.log(`Database connected successfully DB HOST: ${con.connection.host}`);
     } catch (e) {
-        alert("Database connection unsuccessful");
         console.error(`Mongo Connection Failed: ${e.message}`);
         process.exit(1); // Exit the process with failure
     }
