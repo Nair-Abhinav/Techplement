@@ -4,10 +4,7 @@ const db = process.env.MONGO_URI || 'mongodb+srv://abhinavnair7404:Abc1234@clust
 
 const connection_DB = async () => {
     try {
-        const con = await mongoose.connect(db, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        const con = await mongoose.connect(db);
         console.log(`Database connected successfully DB HOST: ${con.connection.host}`);
     } catch (e) {
         console.error(`Mongo Connection Failed: ${e.message}`);
