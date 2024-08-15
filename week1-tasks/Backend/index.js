@@ -12,7 +12,8 @@ connection_DB();
 app.use((req, res, next) => {
   const allowedOrigins = [
     'https://techplement-task-frontend.vercel.app',
-    'https://techplement-eta.vercel.app'
+    'https://techplement-eta.vercel.app',
+    'https://techplement-backend-eight.vercel.app'
   ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
