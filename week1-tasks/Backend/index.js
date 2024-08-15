@@ -8,7 +8,7 @@ const connection_DB = require('./db/index.db');
 dotenv.config();
 app.use(express.json());
 app.use(cors());  
-
+connection_DB();
 app.use((req, res, next) => {
   const allowedOrigins = [
     'https://techplement-task-frontend.vercel.app',
@@ -30,9 +30,4 @@ app.use('/api/transactions', transactionRoutes);
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  connection_DB().then(() => {
-      console.log("Database connected successfully");
-  }).catch((e) => {
-      console.log("Mongo Connection Failed");
-  })
 });
