@@ -10,12 +10,20 @@ app.use(cors());
 app.use(express.json());
 connection_DB();
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://techplement-task-frontend.vercel.app','https://techplement-eosin.vercel.app/api/auth/login','https://techplement-eosin.vercel.app/api/auth/register'); // Set the exact origin
-  res.header('Access-Control-Allow-Credentials', 'true'); // Allow credentials
-  res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE'); // Optional: Allow specific methods
-  res.header('Access-Control-Allow-Headers', 'Content-Type'); // Optional: Allow specific headers
+  const allowedOrigins = [
+    'https://techplement-task-frontend.vercel.app',
+    'https://techplement-eta.vercel.app'
+  ];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
+
 app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
 const PORT = process.env.PORT;
