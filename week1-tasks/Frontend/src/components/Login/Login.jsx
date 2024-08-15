@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     try {
       console.log(url);
-      const response = await axios.post('https://techplement-eosin.vercel.app/api/auth/login', { email, password });
+      const response = await axios.post('https://techplement-backend-eight.vercel.app/api/auth/login', { email, password });
       localStorage.setItem('token', response.data.token);
       navigate('/dashboard'); // Navigate to dashboard after login
     } catch (error) {
