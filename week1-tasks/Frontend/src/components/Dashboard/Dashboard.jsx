@@ -13,7 +13,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchAccount = async () => {
       try {
-        const response = await axios.get('/api/transactions/account', {
+        const response = await axios.get('https://techplement-backend-eight.vercel.app/api/transactions/account', {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
         setBalance(response.data.balance);
@@ -28,8 +28,8 @@ const Dashboard = () => {
   const handleTransaction = async () => {
     try {
       const url = transactionType === 'deposit'
-        ? `/api/transactions/deposit`
-        : `/api/transactions/withdraw`;
+        ? `https://techplement-backend-eight.vercel.app/api/transactions/deposit`
+        : `https://techplement-backend-eight.vercel.app/api/transactions/withdraw`;
 
       const response = await axios.post(url, { amount }, {
         headers: { Authorization: `${localStorage.getItem('token')}` }
